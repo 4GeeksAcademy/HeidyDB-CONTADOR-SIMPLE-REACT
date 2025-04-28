@@ -17,6 +17,8 @@ import Home from './components/Home';
 
 let seconds = 0;
 let secondsDec = 300;
+let valorInput = "";
+
 
      const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -40,6 +42,9 @@ setInterval(() => {
     <React.StrictMode>
       <Home  uno={uno} dos={dos} tres={tres} cuatro={cuatro} cinco={cinco} seis={seis} 
       unoDec={unoDec} dosDec={dosDec} tresDec={tresDec} cuatroDec={cuatroDec} cincoDec={cincoDec} seisDec={seisDec}
+      valorInput={valorInput}
+      cambiosInput={cambiosInput}
+     
      />
     
     </React.StrictMode>
@@ -48,7 +53,14 @@ setInterval(() => {
     seconds ++;
     if (secondsDec > 0) secondsDec --;
   
-      
+      // Captura lo que el usuario escribe
+
     
 }, 1000)
+const cambiosInput = (e) => {
+  valorInput = e.target.value;
+  if (!isNaN(valorInput) && valorInput !== "") {
+  secondsDec = parseInt(valorInput);}
+  renderApp();
+};
 

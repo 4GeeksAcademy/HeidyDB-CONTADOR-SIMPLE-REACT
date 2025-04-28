@@ -31,8 +31,10 @@ const Home = (props) => {
 		    <div className="d-flex justify-content-center"> 
 
 			<div className="input-group">
-			 	 <span className="input-group-text w-10">Decrementar desde:</span>
- 			 	<input type="text"  className="form-control "></input>
+			 	 <span className="input-group-text ">Decrementar desde:</span>
+ 			 	<input type="number"  className="form-control " placeholder="seg"
+				 onChange={props.cambiosInput}
+				 value={props.valorInput}></input>
 			</div>
 
 			 <Digito  secondsDec= {props.seisDec} />
